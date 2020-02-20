@@ -1,2 +1,5 @@
 directus.env
 .DS_Store
+data/
+directus.env
+mysql.env

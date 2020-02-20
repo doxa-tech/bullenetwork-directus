@@ -7,8 +7,10 @@ services:
       MYSQL_USER: "directus"
     ports:
       - "3306:3306"
+    volumes:
+      - ./data/mysql:/var/lib/mysql
     env_file:
-      - ./directus.env
+      - ./mysql.env
 
   directus:
     image: directus/directus:v8-apache
