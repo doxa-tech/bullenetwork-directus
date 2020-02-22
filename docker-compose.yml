@@ -15,7 +15,7 @@ services:
   directus:
     image: directus/directus:v8-apache
     ports:
-      - "8080:80"
+      - "127.0.0.1:8095:80"
     environment:
       DIRECTUS_APP_ENV: "production"
       DIRECTUS_DATABASE_HOST: "mysql"
@@ -25,6 +25,7 @@ services:
     volumes:
       - ./data/config:/var/directus/config
       - ./data/uploads:/var/directus/public/uploads
+      - ./directus:/
     links:
       - mysql:mysql
     env_file:
